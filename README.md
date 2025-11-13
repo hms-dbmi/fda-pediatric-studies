@@ -4,7 +4,7 @@ This repository contains the R scripts and analytical workflow used in the study
 
 ---
 
-## 📦 Datasets and Authorization
+## Datasets and Authorization
 
 This repository includes the curated dataset compiled for the analysis, derived from the **FDA’s Postmarketing Requirements and Commitments Database**.  
 No patient-level or confidential data are included.  
@@ -12,7 +12,7 @@ For additional details about dataset generation, please refer to the *Methods* s
 
 ---
 
-## 🧩 Dependencies
+## Dependencies
 
 All analyses were performed in **R (≥4.2.0)**.  
 The following R packages are required to reproduce the results:
@@ -41,6 +41,7 @@ library(readxl)
 ```
 
 ## Repository Organization
+```
 ├── /data/                 # Publicly available curated datasets
 │   ├── fda_drug_approvals_2011_2023.csv
 │   ├── pediatric_labeling_additions.csv
@@ -51,10 +52,11 @@ library(readxl)
 │   ├── table3_cox_models.R
 │   └── supplementary_analysis.R
 └── README.md
+```
 
 ## Citation
 If you use this dataset or code, please cite:
-[ CITATION AND LINK TO THE PUBLCATION TO BE ADDED ]
+[ CITATION AND LINK TO THE PUBLICATION TO BE ADDED ]
 
 
 ## License
