@@ -18,33 +18,36 @@ All analyses were performed in **R (≥4.2.0)**.
 The following R packages are required to reproduce the results:
 
 ```r
-# Core packages
-library(tidyverse)
-library(broom)
-library(forcats)
-library(lubridate)
+# Core tidyverse and utility packages
+library(dplyr)         # Data manipulation
+library(tidyr)         # Data tidying (pivot_longer, etc.)
+library(purrr)         # Functional programming (map, etc.)
+library(stringr)       # String operations
+library(janitor)       # Cleaning column names
+library(lubridate)     # Date handling
+library(forcats)       # Factor ordering
+
 
 # Statistical modeling
-library(car)
-library(sandwich)
-library(lmtest)
-library(survival)
+library(lmtest)        # Statistical tests (e.g., coeftest)
+library(sandwich)      # Robust / clustered SEs (e.g., vcovCL)
+library(survival)      # Survival analysis (Cox models, Surv objects, coxph, cox.zph)
+library(broom)         # Tidy model outputs (tidy(), glance(), augment() for regression/survival models)
+
 
 # Table and summary formatting
-library(modelsummary)
-library(gt)
-library(janitor)
+library(gtsummary)     # Table formatting for publications
+library(modelsummary)  # Compact model tables
 
-# For visualization and data cleaning
-library(ggplot2)
-library(readxl)
+# Visualization
+library(ggplot2)       # Plotting
 ```
 
 ## Repository Organization
 ```
 ├── /data/                 # Publicly available curated datasets
-│   ├── fda_drug_approvals_2011_2023.csv
-│   ├── pediatric_labeling_additions.csv
+│   ├── fda_drug_approvals_2011_2023.txt
+│   ├── pediatric_labeling_additions.txt
 │   └── 
 ├── /code/                 # R scripts for all analyses
 │   ├── table1_linear_regression.R
