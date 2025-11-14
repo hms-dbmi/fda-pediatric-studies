@@ -28,11 +28,11 @@ library(ggplot2)       # Plotting
 # =============================
 # 1) Read and format the data
 # =============================
-Sheets <- read.delim(file   = "../fda-pediatric-studies/data/t1.txt", 
+Sheets <- read.delim(file   = "../fda-pediatric-studies/data/fda_drug_approvals_2011_2023.txt", 
                      header = TRUE, 
                      sep    = "\t")
 
-label_data <- read.delim(file   = "../fda-pediatric-studies/data/t3_labelData.txt", 
+label_data <- read.delim(file   = "../fda-pediatric-studies/data/pediatric_labeling_additions.txt", 
                         header = TRUE, 
                         sep    = "\t")
 
