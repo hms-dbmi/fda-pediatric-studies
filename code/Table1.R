@@ -70,9 +70,15 @@ Sheets %>%
 
 # Overall mean/median/SD for duration
 Sheets %>%
-  dplyr::summarise( mean(original_duration_years, na.rm = TRUE),
-                    median(original_duration_years, na.rm = TRUE),
-                    sd_duration = sd(original_duration_years, na.rm = TRUE))
+  dplyr::summarise(
+    mean_duration = mean(original_duration_years, na.rm = TRUE),
+    median_duration = median(original_duration_years, na.rm = TRUE),
+    sd_duration = sd(original_duration_years, na.rm = TRUE),
+    n = sum(!is.na(original_duration_years)),
+    se = sd_duration / sqrt(n),
+    ci_lower = mean_duration - qt(0.975, df = n - 1) * se,
+    ci_upper = mean_duration + qt(0.975, df = n - 1) * se
+  )
 
 # By BLA (Non-Biologic vs Biologic)
 Sheets %>%
