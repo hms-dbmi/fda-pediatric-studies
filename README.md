@@ -1,6 +1,6 @@
 # Pediatric Studies and Labeling Additions Required by the US FDA for Novel Drug Approvals, 2011–2023
 
-This repository contains the R scripts and analytical workflow used in the study *“Pediatric Studies and Labeling Additions Required by the US FDA for Novel Drug Approvals, 2011–2023.”* The code reproduces all main analyses presented in the manuscript, including generation of **Tables 1–3** and the **supplementary materials**. The repository includes data preparation, statistical analyses (ANOVA, logistic regression, and Cox proportional hazards models), and figure/table formatting steps used for publication. All analyses were conducted in R, and the repository is organized for reproducibility and transparency.
+This repository contains the R scripts and analytical workflow used in the study *“Pediatric Studies and Labeling Additions Required by the US FDA for Novel Drug Approvals, 2011–2023.”* The code reproduces all main analyses presented in the manuscript, including generation of **Tables 1–3, Figures 1-2** and the **supplementary table**. The repository includes data preparation, statistical analyses (ANOVA, logistic regression, and Cox proportional hazards models), and figure/table formatting steps used for publication. All analyses were conducted in R, and the repository is organized for reproducibility and transparency.
 
 ---
 
@@ -45,15 +45,16 @@ library(ggplot2)       # Plotting
 
 ## Repository Organization
 ```
-├── /data/                 # Publicly available curated datasets
+├── /data/                 
 │   ├── fda_drug_approvals_2011_2023.txt
 │   ├── pediatric_labeling_additions.txt
 │   └── 
-├── /code/                 # R scripts for all analyses
-│   ├── table1_linear_regression.R
-│   ├── table2_logistic_models.R
-│   ├── table3_cox_models.R
-│   └── supplementary_analysis.R
+├── /code/                
+│   ├── Table1.R
+│   ├── Table2.R
+│   ├── Table3.R
+│   ├── Figure1andFigure2.R
+│   └── SupplementaryTable.R
 └── README.md
 ```
 
