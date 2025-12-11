@@ -1,6 +1,6 @@
-# Pediatric Studies and Labeling Additions Required by the US FDA for Novel Drug Approvals, 2011–2023
+# Pediatric Studies and Labeling Additions Required by the US FDA for Novel Drugs Approved from 2011-2023: A retrospective cohort study
 
-This repository contains the R scripts and analytical workflow used in the study *“Pediatric Studies and Labeling Additions Required by the US FDA for Novel Drug Approvals, 2011–2023.”* The code reproduces all main analyses presented in the manuscript, including generation of **Tables 1–3, Figures 1-2** and the **supplementary table**. The repository includes data preparation, statistical analyses (ANOVA, logistic regression, and Cox proportional hazards models), and figure/table formatting steps used for publication. All analyses were conducted in R, and the repository is organized for reproducibility and transparency.
+This repository contains the R scripts and analytical workflow used in the study *“Pediatric Studies and Labeling Additions Required by the US FDA for Novel Drugs Approved from 2011-2023: A retrospective cohort study.”* The code reproduces all main analyses presented in the manuscript, including generation of **Tables 1–3, Figures 1-2** and the **supplementary table**. The repository includes data preparation, statistical analyses (ANOVA, logistic regression, and Cox proportional hazards models), and figure/table formatting steps used for publication. All analyses were conducted in R, and the repository is organized for reproducibility and transparency.
 
 ---
 
