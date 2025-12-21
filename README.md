@@ -59,8 +59,8 @@ library(ggplot2)       # Plotting
 ```
 
 ## Citation
-If you use this dataset or code, please cite:
-[ CITATION AND LINK TO THE PUBLICATION TO BE ADDED ]
+If you use this dataset or code, please cite: McGonigle, R., Naci, H., Siebert, M., Ouvina, M., Gutiérrez-Sacristán, A., Wagner, A.K. and Bourgeois, F.T., 2025. Pediatric studies and labeling additions required by the US FDA for novel drugs approved from 2011 to 2023: A retrospective cohort study. PLoS medicine, 22(12), p.e1004651.
+https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1004651 
 
 
 ## License
