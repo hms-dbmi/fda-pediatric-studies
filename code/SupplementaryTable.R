@@ -200,6 +200,7 @@ fit_glm_for <- function(df,
   # 1) build analysis frame: binary y + factors + 0/1 age flags
   df2 <- df %>%
     dplyr::transmute(
+      !!rlang::sym(drug_col),   # clustering variable for vcovCL()
       y = dplyr::case_when(
         !!ysym %in% c(TRUE, 1, "1", "Y", "Yes", "yes") ~ 1L,
         !!ysym %in% c(FALSE, 0, "0", "N", "No", "no")  ~ 0L,
@@ -233,6 +234,7 @@ fit_glm_for <- function(df,
   m <- glm(fml, data = df2, family = binomial)
   
   # 4) cluster-robust vcov by drug
+  stopifnot(!is.null(df2[[drug_col]]), !anyNA(df2[[drug_col]]))
   V_cl <- sandwich::vcovCL(m, cluster = df2[[drug_col]])
   
   coefs <- stats::coef(m)
