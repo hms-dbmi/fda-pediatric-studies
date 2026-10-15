@@ -107,7 +107,7 @@ merged_df <- merged_df %>%
 merged_df_subset <- merged_df %>%
       dplyr::select( Drug.name, label_change_date, label_change_flag, time_to_label_addition_by_study,
                      Neonate, Infant, Early.childhood,Late.childhood, Adolescent, Unspecified, 
-                     ATC_category, BLA_category, approval_year,approval_year_c, 
+                     ATC_category, BLA_category, approval_year,approval_year_c, follow_up,
                      PREA.labeling.change.type.x, PREA.labeling.change.type.y) %>%
       unique()
 
@@ -166,7 +166,10 @@ dedup <- merged_df_subset %>%
     # Approval year info
     approval_year   = first_non_na(approval_year),
     approval_year_c = first_non_na(approval_year_c),
-    
+
+    # Follow-up from earliest approval to 2024-12-31 (censoring time)
+    follow_up = max(follow_up, na.rm = TRUE),
+
     .groups = "drop"
   )
 
@@ -350,8 +353,8 @@ tbl3_or
 cox_df <- data_tbl3 %>%
   dplyr::mutate(
     event = y,
-    followup_years = max(time_to_label_addition_by_study, na.rm = TRUE),
-    time = ifelse(event == 1L, time_to_label_addition_by_study, followup_years)
+    # Censor drugs without an addition at their own follow-up to 2024-12-31
+    time = ifelse(event == 1L, time_to_label_addition_by_study, follow_up)
   ) %>%
   tidyr::drop_na(time)
 
