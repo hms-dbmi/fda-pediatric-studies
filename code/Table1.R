@@ -141,6 +141,7 @@ df_lin <- Sheets %>%
                             . %in% c("N","No",0,FALSE) ~ 0L,
                             TRUE ~ NA_integer_))) %>%
   dplyr::transmute(
+    Drug.name = Drug.name,   # clustering variable for vcovCL()
     y  = as.numeric(original_duration_years),
     Study.classification = factor(Study.classification),  # efficacy / safety / PK
     ATC_category         = factor(ATC_category),
@@ -186,6 +187,7 @@ p_global_lin
 # ===================================
 # 4) Cluster-robust SEs by Drug name
 # ===================================
+stopifnot(!is.null(df_lin$Drug.name), !anyNA(df_lin$Drug.name))
 cov_drug <- vcovCL(m_lin, cluster = df_lin$Drug.name)
 
 # Coefficient test with clustered SEs
